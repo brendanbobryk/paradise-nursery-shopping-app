@@ -1,20 +1,22 @@
 import React from 'react';
-import products from '../redux/productsSlice';
+import { useSelector } from 'react-redux';
 import PlantCard from '../components/PlantCard';
 
 export default function ProductListing() {
+  const products = useSelector(state => state.products);
+
+  const categories = [...new Set(products.map(p => p.category))];
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '1rem',
-        justifyContent: 'center',
-        padding: '2rem',
-      }}
-    >
-      {products.map((plant) => (
-        <PlantCard key={plant.id} plant={plant} />
+    <div>
+      {categories.map(category => (
+        <div key={category}>
+          <h2>{category}</h2>
+          <div className="plant-list">
+            {products.filter(p => p.category === category)
+                     .map(p => <PlantCard key={p.id} plant={p} />)}
+          </div>
+        </div>
       ))}
     </div>
   );
