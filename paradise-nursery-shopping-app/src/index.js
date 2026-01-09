@@ -5,7 +5,8 @@ import App from './App';
 import { store } from './redux/store';
 import './App.css';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <Provider store={store}>
     <App />
   </Provider>
