@@ -7,7 +7,7 @@ export default function Header() {
 
   return (
     <header>
-      <h1>GreenThumb Shop</h1>
+      <h1>Paradise Nursery</h1>
       <nav>
         <Link to="/products">Products</Link>
         <Link to="/cart">
