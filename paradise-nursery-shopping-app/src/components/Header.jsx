@@ -48,6 +48,7 @@ export default function Header() {
             textDecoration: 'none',
             color: 'white',
             fontWeight: 'bold',
+            fontSize: '1.1rem', // explicitly match cart text
             transition: 'color 0.2s',
           }}
           onMouseEnter={e => (e.currentTarget.style.color = '#d4ffd4')}
@@ -62,13 +63,17 @@ export default function Header() {
             textDecoration: 'none',
             color: 'white',
             fontWeight: 'bold',
-            fontSize: '1.1rem',
+            fontSize: '1.1rem', // match Products exactly
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.35rem', // spacing between text and icon
             transition: 'color 0.2s',
+            lineHeight: 1, // ensures vertical alignment
           }}
           onMouseEnter={e => (e.currentTarget.style.color = '#d4ffd4')}
           onMouseLeave={e => (e.currentTarget.style.color = 'white')}
         >
-          🛒 {totalQuantity}
+          <span style={{ display: 'inline-flex', alignItems: 'center' }}>Cart</span> 🛒 {totalQuantity}
         </Link>
       </nav>
     </header>
