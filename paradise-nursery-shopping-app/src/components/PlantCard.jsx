@@ -15,24 +15,34 @@ export default function PlantCard({ plant }) {
     <div
       className="plant-card"
       style={{
-        width: '180px',
+        width: '200px',
         textAlign: 'center',
-        border: '1px solid #ccc',
-        borderRadius: '8px',
-        padding: '0.5rem',
-        boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
+        borderRadius: '12px',
+        padding: '0.8rem',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        backgroundColor: 'white',
+        transition: 'transform 0.2s, box-shadow 0.2s',
+        cursor: 'pointer',
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.transform = 'translateY(-5px)';
+        e.currentTarget.style.boxShadow = '0 8px 20px rgba(0,0,0,0.2)';
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.transform = 'translateY(0)';
+        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
       }}
     >
       <div
         style={{
           width: '100%',
-          height: '150px',      // fixed height for images
+          height: '160px',
           overflow: 'hidden',
-          borderRadius: '6px',
-          marginBottom: '0.5rem',
+          borderRadius: '10px',
+          marginBottom: '0.6rem',
         }}
       >
         <img
@@ -41,22 +51,28 @@ export default function PlantCard({ plant }) {
           style={{
             width: '100%',
             height: '100%',
-            objectFit: 'cover',   // scale/crop images correctly
+            objectFit: 'cover',
           }}
         />
       </div>
-      <h3 style={{ margin: '0.5rem 0' }}>{plant.name}</h3>
-      <p style={{ margin: '0.2rem 0' }}>${plant.price}</p>
+      <h3 style={{ margin: '0.5rem 0', fontSize: '1.1rem', color: '#333' }}>
+        {plant.name}
+      </h3>
+      <p style={{ margin: '0.2rem 0', color: '#666' }}>${plant.price}</p>
       <button
         onClick={handleAdd}
         disabled={added}
         style={{
-          padding: '0.4rem 0.8rem',
+          padding: '0.5rem 1rem',
+          marginTop: '0.5rem',
+          width: '100%',
           backgroundColor: added ? '#ccc' : '#4CAF50',
           color: 'white',
           border: 'none',
-          borderRadius: '4px',
+          borderRadius: '6px',
           cursor: added ? 'not-allowed' : 'pointer',
+          fontWeight: 'bold',
+          transition: 'background-color 0.2s',
         }}
       >
         {added ? 'Added' : 'Add to Cart'}
