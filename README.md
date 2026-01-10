@@ -41,6 +41,7 @@ Paradise Nursery Shopping Application allows users to explore a curated selectio
 - CSS
 
 ## Setup Instructions
+
 1. Clone the repository:
   ```bash
   git clone https://github.com/brendanbobryk/paradise-nursery-shopping-app.git
