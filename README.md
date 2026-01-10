@@ -56,5 +56,5 @@ Run the development server
 5. **Open the app**
 Visit http://localhost:5173 in your browser.
 
-Live Demo
-https://paradise-nursery.netlify.app
+## Live Demo
+https://paradise-nursery-shopping-app.vercel.app
