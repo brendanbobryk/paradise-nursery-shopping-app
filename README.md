@@ -47,17 +47,17 @@ Paradise Nursery Shopping Application allows users to explore a curated selectio
   git clone https://github.com/brendanbobryk/paradise-nursery-shopping-app.git
   ```
 
-2. Navigate to the project folder
+2. Navigate to the project folder:
   ```bash
   cd paradise-nursery-shopping-app
   ```
 
-3. Install dependencies
+3. Install dependencies:
   ```bash
   npm install
   ```
 
-4. Start the development server
+4. Start the development server:
   ```bash
   npm run dev
   ```
